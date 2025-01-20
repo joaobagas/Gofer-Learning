@@ -6,7 +6,7 @@ type Line struct {
 	Beta  float32
 }
 
-func CreateLine() Line {
+func CreateLinearRegression() Line {
 	newLine := Line{
 		Alpha: 1,
 		Beta:  0,
@@ -14,7 +14,7 @@ func CreateLine() Line {
 	return newLine
 }
 
-func Fit(line *Line, x []float32, y []float32) {
+func FitLinearRegression(line *Line, x []float32, y []float32) {
 	if len(x) != len(y) {
 		return
 	}
@@ -37,6 +37,6 @@ func Fit(line *Line, x []float32, y []float32) {
 	line.Beta = (sumY - line.Alpha*sumX) / n
 }
 
-func Predict(line Line, val float32) float32 {
+func PredictLinearRegression(line Line, val float32) float32 {
 	return val*line.Alpha + line.Beta
 }

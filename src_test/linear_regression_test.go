@@ -9,11 +9,11 @@ func TestRegession(t *testing.T) {
 	x := []float32{1, 2, 3, 4, 5}
 	y := []float32{2, 4, 5, 4, 5}
 
-	line := src.CreateLine()
-	src.Fit(&line, x, y)
+	line := src.CreateLinearRegression()
+	src.FitLinearRegression(&line, x, y)
 
 	val := float32(6)
-	prediction := src.Predict(line, val)
+	prediction := src.PredictLinearRegression(line, val)
 
 	if line.Alpha != 0.6 {
 		t.Fatalf("Alpha wasn't calculated properly.")
