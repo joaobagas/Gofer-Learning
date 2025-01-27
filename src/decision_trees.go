@@ -1,6 +1,8 @@
 package src
 
-import "math"
+import (
+	"math"
+)
 
 // data: numpy.ndarray, default=None
 // children: dict(feat_value: Node), default=None
@@ -16,23 +18,26 @@ type Node struct {
 	isLeaf    bool
 }
 
-type Classifier struct {
-	root Node
-}
-
-func CreateDecisionTree() {
-
+func CreateDecisionTree() Node {
+	var root Node
+	return root
 }
 
 func FitDecisionTree() {
 
 }
 
-func PredictDecisionTree() {
+func PredictDecisionTree(currentNode Node) int {
+	for {
+		if currentNode.isLeaf {
+			return currentNode.predicted
+		} else {
 
+		}
+	}
 }
 
-func calculateEntropy(Y []int) float64 {
+func calculateEntropy(Y []int) float32 {
 	labelCounts := make(map[int]int)
 	for _, label := range Y {
 		labelCounts[label]++
@@ -46,9 +51,9 @@ func calculateEntropy(Y []int) float64 {
 		entropy += probability * math.Log2(1/probability)
 	}
 
-	return entropy
+	return float32(entropy)
 }
 
-func splitOnFunction() {
+func splitOnFunction(data string, featureIndex int) {
 
 }

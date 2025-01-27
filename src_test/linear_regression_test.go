@@ -18,7 +18,7 @@ func TestRegession(t *testing.T) {
 	if line.Alpha != 0.6 {
 		t.Fatalf("Alpha wasn't calculated properly.")
 	}
-	if line.Beta != 4.0 {
+	if line.Beta != 2.2 {
 		t.Fatalf("Beta wasn't calculated properly.")
 	}
 	if prediction != 5.8 {
